@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="blazeaxel_aspModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'blazeaxel_bKash.dbo.ASPDemoes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ASPDemoes">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Gender" />
+      <PropertyRef Name="Profession" />
+      <PropertyRef Name="Hobbies" />
+      <PropertyRef Name="DOB" />
+      <PropertyRef Name="Password" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Gender" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Profession" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Hobbies" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DOB" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="blazeaxel_aspModelStoreContainer">
+    <EntitySet Name="ASPDemoes" EntityType="Self.ASPDemoes" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ASPDemoes].[ID] AS [ID], 
+    [ASPDemoes].[Name] AS [Name], 
+    [ASPDemoes].[Gender] AS [Gender], 
+    [ASPDemoes].[Profession] AS [Profession], 
+    [ASPDemoes].[Hobbies] AS [Hobbies], 
+    [ASPDemoes].[DOB] AS [DOB], 
+    [ASPDemoes].[Password] AS [Password]
+    FROM [dbo].[ASPDemoes] AS [ASPDemoes]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

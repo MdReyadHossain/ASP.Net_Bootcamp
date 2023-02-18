@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="blazeaxel_bKashModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'blazeaxel_bKash.dbo.Agent' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Agent">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="PhoneNo" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="FathersName" />
+      <PropertyRef Name="MothersName" />
+      <PropertyRef Name="DateOfBirth" />
+      <PropertyRef Name="BloodGroup" />
+      <PropertyRef Name="Address" />
+      <PropertyRef Name="Division" />
+      <PropertyRef Name="Balance" />
+      <PropertyRef Name="Pin" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PhoneNo" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FathersName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="MothersName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DateOfBirth" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="BloodGroup" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Division" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Balance" Type="float" Nullable="false" />
+    <Property Name="Pin" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'blazeaxel_bKash.dbo.ASPDemoes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ASPDemoes">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Gender" />
+      <PropertyRef Name="Profession" />
+      <PropertyRef Name="Hobbies" />
+      <PropertyRef Name="DOB" />
+      <PropertyRef Name="Password" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Gender" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Profession" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Hobbies" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DOB" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="blazeaxel_bKashModelStoreContainer">
+    <EntitySet Name="Agent" EntityType="Self.Agent" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Agent].[ID] AS [ID], 
+    [Agent].[PhoneNo] AS [PhoneNo], 
+    [Agent].[Name] AS [Name], 
+    [Agent].[FathersName] AS [FathersName], 
+    [Agent].[MothersName] AS [MothersName], 
+    [Agent].[DateOfBirth] AS [DateOfBirth], 
+    [Agent].[BloodGroup] AS [BloodGroup], 
+    [Agent].[Address] AS [Address], 
+    [Agent].[Division] AS [Division], 
+    [Agent].[Balance] AS [Balance], 
+    [Agent].[Pin] AS [Pin]
+    FROM [dbo].[Agent] AS [Agent]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ASPDemoes" EntityType="Self.ASPDemoes" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ASPDemoes].[ID] AS [ID], 
+    [ASPDemoes].[Name] AS [Name], 
+    [ASPDemoes].[Gender] AS [Gender], 
+    [ASPDemoes].[Profession] AS [Profession], 
+    [ASPDemoes].[Hobbies] AS [Hobbies], 
+    [ASPDemoes].[DOB] AS [DOB], 
+    [ASPDemoes].[Password] AS [Password]
+    FROM [dbo].[ASPDemoes] AS [ASPDemoes]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@*if (ViewBag.Username != null || ViewBag.Password != null)
+    {
+        <span>@ViewBag.Username</span>
+        <br />
+        <span>@ViewBag.Password</span>
+        <br />
+}*@
+
+@if (Model != null)
+{
+    <h3>@Model.Username</h3>
+    <h3>@Model.Password</h3>
+}
+
+
+<h2>Login</h2>
+<form method="post">
+    <input class="form-control" type="text" name="Username" placeholder="Username" />
+    <input class="form-control" type="password" name="Password" placeholder="Password" />
+
+    <input class="btn btn-primary" type="submit" value="Login" />
+</form>
