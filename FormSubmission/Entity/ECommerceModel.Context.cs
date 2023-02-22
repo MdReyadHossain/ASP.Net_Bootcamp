@@ -13,10 +13,10 @@ namespace FormSubmission.Entity
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ASPDBEntities : DbContext
+    public partial class EcommerceEntities : DbContext
     {
-        public ASPDBEntities()
-            : base("name=ASPDBEntities")
+        public EcommerceEntities()
+            : base("name=EcommerceEntities")
         {
         }
     
@@ -25,6 +25,6 @@ namespace FormSubmission.Entity
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<DotNetUser> DotNetUsers { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
     }
 }

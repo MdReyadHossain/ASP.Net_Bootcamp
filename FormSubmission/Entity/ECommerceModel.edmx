@@ -4,8 +4,8 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ASPDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="DotNetUsers">
+    <Schema Namespace="EcommerceModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Customers">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -13,18 +13,17 @@
           <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Gender" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Profession" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Hobbies" Type="varbinary" MaxLength="50" Nullable="false" />
-          <Property Name="Password" Type="varchar" MaxLength="50" />
+          <Property Name="DOB" Type="datetime" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="ASPDBModelStoreContainer">
-          <EntitySet Name="DotNetUsers" EntityType="Self.DotNetUsers" Schema="dbo" store:Type="Tables" />
+        <EntityContainer Name="EcommerceModelStoreContainer">
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="ASPDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="DotNetUser">
+      <Schema Namespace="EcommerceModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Customer">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
@@ -32,26 +31,26 @@
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Profession" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="Hobbies" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
         </EntityType>
-        <EntityContainer Name="ASPDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="DotNetUsers" EntityType="Self.DotNetUser" />
+        <EntityContainer Name="EcommerceEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Customers" EntityType="Self.Customer" />
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ASPDBModelStoreContainer" CdmEntityContainer="ASPDBEntities">
-          <EntitySetMapping Name="DotNetUsers">
-            <EntityTypeMapping TypeName="ASPDBModel.DotNetUser">
-              <MappingFragment StoreEntitySet="DotNetUsers">
+        <EntityContainerMapping StorageEntityContainer="EcommerceModelStoreContainer" CdmEntityContainer="EcommerceEntities">
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="EcommerceModel.Customer">
+              <MappingFragment StoreEntitySet="Customers">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Gender" ColumnName="Gender" />
                 <ScalarProperty Name="Profession" ColumnName="Profession" />
-                <ScalarProperty Name="Hobbies" ColumnName="Hobbies" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
               </MappingFragment>
             </EntityTypeMapping>

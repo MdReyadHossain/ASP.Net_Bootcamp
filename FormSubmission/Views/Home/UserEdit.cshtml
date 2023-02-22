@@ -1,36 +1,38 @@
-﻿@{
-    ViewBag.Title = "Registration";
-}
+﻿
+@{
+    ViewBag.Title = "UserEdit";
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
 
-@{ 
     bool isProfession(string profession)
     {
-        if(Model != null && Model.Profession != null)
+        if (Model != null && Model.Profession != null)
             if (Model.Profession == profession) return true;
-        
+
         return false;
     }
 
     bool isGender(string gender)
     {
         if (Model != null && Model.Gender != null)
-            if(Model.Gender == gender) return true;
-        
+            if (Model.Gender == gender) return true;
+
         return false;
     }
 }
 
-<h2>Registration</h2>
 
-<form action="" method="post">
+<h2>Edit Profile</h2>
+
+<form method="post">
+    <input type="hidden" name="ID" value="@Model.ID" />
     <label for="name">Name:</label>
-    <input class="form-control" type="text" id="name" value="@(Model == null ? "" : Model.Name)" name="Name" placeholder="Username"/>
+    <input class="form-control" type="text" id="name" value="@Model.Name" name="Name" placeholder="Username" />
     <span class="text-danger">@Html.ValidationMessage("Name")</span>
     <br />
     <label>
         Gender:
     </label>
-    <input type="radio" id="male" name="Gender" value="Male" checked=@(isGender("Male"))/> <label for="male">Male</label>
+    <input type="radio" id="male" name="Gender" value="Male" checked=@(isGender("Male")) /> <label for="male">Male</label>
     <input type="radio" id="female" name="Gender" value="Female" checked=@(isGender("Female")) /> <label for="female">Female</label> <br />
     <span class="text-danger">@Html.ValidationMessage("Gender")</span>
     <br />
@@ -49,16 +51,9 @@
     <label>
         Date of Birth:
     </label>
-    <input type="date" id="birthday" name="DOB" value="@(Model == null ? "" : Model.DOB.Date.ToString("yyyy-MM-dd"))" />
+    <input type="date" id="birthday" name="DOB" value="@Model.DOB.Date.ToString("yyyy-MM-dd")" />
     <span class="text-danger">@Html.ValidationMessage("DOB")</span><br />
-    <br />
-
-    <label for="pass">Password: </label>
-    <input class="form-control" type="password" id="pass" value="@(Model == null ? "" : Model.Password)" placeholder="Password" name="Password" />
-    <span class="text-danger">@Html.ValidationMessage("Password")</span><br />
-    <input class="form-control" type="password" id="repass" value="@(Model == null ? "" : Model.RePassword)" placeholder="Retype-Password" name="RePassword" />
-    <span class="text-danger">@Html.ValidationMessage("RePassword")</span><br />
-
+    <input type="password" value="@Model.Password" name="Password" hidden />
     <br />
     <input type="submit" class="btn btn-success" /> <br />
 

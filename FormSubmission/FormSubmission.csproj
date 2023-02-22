@@ -128,24 +128,25 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Entity\DotNetUser.cs">
-      <DependentUpon>DotNetUsers.tt</DependentUpon>
+    <Compile Include="Entity\Customer.cs">
+      <DependentUpon>ECommerceModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity\DotNetUsers.Context.cs">
+    <Compile Include="Entity\ECommerceModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DotNetUsers.Context.tt</DependentUpon>
+      <DependentUpon>ECommerceModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity\DotNetUsers.cs">
+    <Compile Include="Entity\ECommerceModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DotNetUsers.tt</DependentUpon>
+      <DependentUpon>ECommerceModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Entity\DotNetUsers.Designer.cs">
+    <Compile Include="Entity\ECommerceModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DotNetUsers.edmx</DependentUpon>
+      <DependentUpon>ECommerceModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -159,15 +160,15 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Entity\DotNetUsers.Context.tt">
+    <Content Include="Entity\ECommerceModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DotNetUsers.edmx</DependentUpon>
-      <LastGenOutput>DotNetUsers.Context.cs</LastGenOutput>
+      <DependentUpon>ECommerceModel.edmx</DependentUpon>
+      <LastGenOutput>ECommerceModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Entity\DotNetUsers.tt">
+    <Content Include="Entity\ECommerceModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DotNetUsers.edmx</DependentUpon>
-      <LastGenOutput>DotNetUsers.cs</LastGenOutput>
+      <DependentUpon>ECommerceModel.edmx</DependentUpon>
+      <LastGenOutput>ECommerceModel.cs</LastGenOutput>
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -175,12 +176,12 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Entity\DotNetUsers.edmx">
+    <EntityDeploy Include="Entity\ECommerceModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DotNetUsers.Designer.cs</LastGenOutput>
+      <LastGenOutput>ECommerceModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Entity\DotNetUsers.edmx.diagram">
-      <DependentUpon>DotNetUsers.edmx</DependentUpon>
+    <Content Include="Entity\ECommerceModel.edmx.diagram">
+      <DependentUpon>ECommerceModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -207,6 +208,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Registration.cshtml" />
+    <Content Include="Views\Home\UserList.cshtml" />
+    <Content Include="Views\Shared\_LayoutCustomer.cshtml" />
+    <Content Include="Views\Customer\Dashboard.cshtml" />
+    <Content Include="Views\Home\UserEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

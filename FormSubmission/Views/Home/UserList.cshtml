@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "UserList";
+}
+
+<h2>User List</h2>
+
+<table class="table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Profession</th>
+        <th>Date of Birth</th>
+        <th colspan="2">Action</th>
+    </tr>
+    @foreach(var i in Model)
+    {
+        <tr>
+            <td>@i.ID</td>
+            <td>@i.Name</td>
+            <td>@i.Gender</td>
+            <td>@i.Profession</td>
+            <td>@i.DOB.Date.ToString("yyyy-MM-dd")</td>
+            <td><a href="/Home/UserEdit/@i.ID">Edit</a></td>
+            <td><a href="/Home/UserDelete/@i.ID" class="text-danger">Delete</a></td>
+        </tr>
+    }
+</table>
