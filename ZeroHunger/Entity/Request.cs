@@ -19,7 +19,7 @@ namespace ZeroHunger.Entity
         public System.DateTime created_time { get; set; }
         public Nullable<System.DateTime> accept_time { get; set; }
         public Nullable<System.DateTime> done_time { get; set; }
-        public Nullable<int> employee_id { get; set; }
+        public int employee_id { get; set; }
         public string status { get; set; }
     
         public virtual Employee Employee { get; set; }

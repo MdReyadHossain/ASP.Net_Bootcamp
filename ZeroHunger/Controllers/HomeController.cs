@@ -43,7 +43,7 @@ namespace ZeroHunger.Controllers
         {
             if (ModelState.IsValid)
             {
-                var db = new Zero_Hunger_DBEntities();
+                var db = new DB_Zero_HungerEntities();
                 db.Employees.Add(emp);
                 db.SaveChanges();
                 return RedirectToAction("Login", "Home");
@@ -64,7 +64,7 @@ namespace ZeroHunger.Controllers
         {
             if (ModelState.IsValid)
             {
-                var db = new Zero_Hunger_DBEntities();
+                var db = new DB_Zero_HungerEntities();
                 db.Restaurants.Add(res);
                 db.SaveChanges();
                 return RedirectToAction("Login", "Home");
@@ -72,6 +72,7 @@ namespace ZeroHunger.Controllers
 
             return View(res);
         }
+
 
         [HttpGet]
         public ActionResult Login()
@@ -86,7 +87,7 @@ namespace ZeroHunger.Controllers
         {
             if (ModelState.IsValid)
             {
-                Zero_Hunger_DBEntities db = new Zero_Hunger_DBEntities();
+                DB_Zero_HungerEntities db = new DB_Zero_HungerEntities();
                 var res = (from r in db.Restaurants
                             where r.name.Equals(login.Name)
                             && r.password.Equals(login.Password)
@@ -118,6 +119,7 @@ namespace ZeroHunger.Controllers
                 {
                     Session["employee"] = emp;
                     Session["employeeName"] = emp.name;
+                    Session["employeeID"] = emp.id;
                     var returnUrl = Request["ReturnUrl"];
                     if (returnUrl != null)
                     {

@@ -31,7 +31,7 @@ namespace ZeroHunger.Controllers
         {
             if (ModelState.IsValid)
             {
-                var db = new Zero_Hunger_DBEntities();
+                var db = new DB_Zero_HungerEntities();
                 db.Requests.Add(req);
                 db.SaveChanges();
                 return RedirectToAction("Dashboard", "Restaurant");

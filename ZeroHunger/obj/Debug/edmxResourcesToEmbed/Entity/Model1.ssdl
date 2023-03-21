@@ -29,7 +29,7 @@
     <Property Name="created_time" Type="datetime" Nullable="false" />
     <Property Name="accept_time" Type="datetime" />
     <Property Name="done_time" Type="datetime" />
-    <Property Name="employee_id" Type="int" />
+    <Property Name="employee_id" Type="int" Nullable="false" />
     <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Restaurants">
@@ -42,7 +42,7 @@
     <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <Association Name="FK_Requests_Employees">
-    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
     <End Role="Requests" Type="Self.Requests" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Employees">
