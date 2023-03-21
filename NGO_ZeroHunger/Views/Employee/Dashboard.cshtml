@@ -5,4 +5,28 @@
 }
 
 <h2>Employee Dashboard</h2>
+<h4>Pending hunger : @ViewBag.reqCount</h4>
 
+<table class="table">
+    <tr>
+        <th>Restaurant Name</th>
+        <th>Assign Time</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var data in Model)
+    {
+        <form action="" method="post">
+            <tr>
+                <td>@data.restaurant_name</td>
+                <td>@data.accept_time</td>
+                <td>
+                    <input type="text" name="id" value=@data.id hidden />
+                    <input type="datetime" name="done_time" value=@DateTime.Now.ToShortTimeString(); hidden />
+                    <input type="text" name="status" value="Zero Hunger" hidden />
+
+                    <input type="submit" class="btn btn-success" value="Complete" />
+                </td>
+            </tr>
+        </form>
+    }
+</table>

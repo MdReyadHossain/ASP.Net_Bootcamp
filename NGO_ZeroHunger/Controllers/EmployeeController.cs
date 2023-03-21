@@ -12,34 +12,32 @@ namespace NGO_ZeroHunger.Controllers
     public class EmployeeController : Controller
     {
         // GET: Employee
-        public ActionResult Dashboard()
-        {
-            return View();
-        }
-
-
         [HttpGet]
-        public ActionResult AllRequest()
+        public ActionResult Dashboard()
         {
             string name = (string)Session["employeeName"];
             NGO_Entities requestDB = new NGO_Entities();
             var request = (from req in requestDB.Requests
                            where req.employee.Equals(name) && req.status.Equals("Assigned")
                            select req);
+
+            ViewBag.reqCount =  request.Count();
             return View(request);
         }
 
         [HttpPost]
-        public ActionResult AllRequest(Request req)
+        public ActionResult Dashboard(Request req)
         {
             var requestDB = new NGO_Entities();
             var request = (from r in requestDB.Requests
                            where r.id.Equals(req.id)
                            select r).SingleOrDefault();
 
-            requestDB.Entry(request).CurrentValues.SetValues(req);
+            request.done_time = req.done_time;
+            request.status = req.status;
+
             requestDB.SaveChanges();
-            return RedirectToAction("AssignedRequest", "Employee");
+            return RedirectToAction("Dashboard", "Employee");
         }
 
 

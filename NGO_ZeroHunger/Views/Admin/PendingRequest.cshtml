@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "PendingRequest";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>PendingRequest</h2>
+
+@if (TempData["Msg"] != null)
+{
+    <h5 class="alert alert-danger">@TempData["Msg"]</h5>
+}
+
+<table class="table">
+    <tr>
+        <th>Restaurant Name</th>
+        <th>Creation Time</th>
+        <th>Action</th>
+    </tr>
+    @foreach (var data in Model)
+    {
+        <tr>
+            <td>@data.restaurant_name</td>
+            <td>@data.created_time</td>
+            <td><a class="btn btn-primary" href="/Admin/AssignEmployee/@data.id">Assign</a></td>
+        </tr>
+    }
+</table>

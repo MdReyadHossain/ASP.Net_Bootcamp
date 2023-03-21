@@ -1,44 +1,58 @@
-﻿using System;
+﻿using NGO_ZeroHunger.Auth;
+using NGO_ZeroHunger.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using ZeroHunger.Auth;
-using ZeroHunger.Entity;
 
-namespace ZeroHunger.Controllers
+namespace NGO_ZeroHunger.Controllers
 {
-    [AdminAccess]
+    [AdminAuthentication]
     public class AdminController : Controller
     {
-        // GET: Admin
         public ActionResult Dashboard()
         {
-            DB_Zero_HungerEntities requestDB = new DB_Zero_HungerEntities();
+            NGO_Entities requestDB = new NGO_Entities();
             var request = requestDB.Requests;
             return View(request);
         }
 
-        [HttpGet]
+
+        
         public ActionResult PendingRequest()
         {
-            DB_Zero_HungerEntities requestDB = new DB_Zero_HungerEntities();
+            NGO_Entities requestDB = new NGO_Entities();
             var request = (from req in requestDB.Requests
                            where req.status.Equals("Pending")
                            select req);
             return View(request);
         }
-        
-        [HttpPost]
-        public ActionResult PendingRequest(Request req)
+
+
+        [HttpGet]
+        public ActionResult AssignEmployee(int id)
         {
-            var requestDB = new DB_Zero_HungerEntities();
-            var request = (from r in requestDB.Requests 
+            ViewBag.id = id;
+            var db = new NGO_Entities();
+            var emp = db.Employees.ToList();
+            return View(emp);
+        }
+
+        [HttpPost]
+        public ActionResult AssignEmployee(Request req)
+        {
+            var requestDB = new NGO_Entities();
+            var request = (from r in requestDB.Requests
                            where r.id.Equals(req.id)
                            select r).SingleOrDefault();
-            if(request != null)
+            if (request != null)
             {
-                requestDB.Entry(request).CurrentValues.SetValues(req);
+                request.employee = req.employee;
+                request.accept_time = req.accept_time;
+                request.status = req.status;
+
+                // requestDB.Entry(request).CurrentValues.SetValues(req);
                 requestDB.SaveChanges();
                 return RedirectToAction("PendingRequest", "Admin");
             }
@@ -47,7 +61,7 @@ namespace ZeroHunger.Controllers
             return RedirectToAction("PendingRequest", "Admin");
         }
 
-        
+
         public ActionResult Logout()
         {
             Session.Clear();

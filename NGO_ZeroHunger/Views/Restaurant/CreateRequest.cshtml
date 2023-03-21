@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "CreateRequest";
+    Layout = "~/Views/Shared/_LayoutRestaurant.cshtml";
+}
+
+<h2>CreateRequest</h2>
+
+<div class="form-horizontal">
+    <h4>Collection Request</h4>
+</div>
+
+<form action="" method="post">
+    <input type="text" name="restaurant_name" value=@Session["restaurantName"] hidden />
+    <input type="text" name="status" value="Pending" hidden />
+    <input type="datetime" name="created_time" value=@DateTime.Now.ToShortTimeString() ; hidden />
+    @if (ViewBag.stat)
+    {
+        <input type="submit" class="btn btn-primary" value="Request Sent" />
+    }
+    else
+    {
+        <h5 class="alert alert-danger">Too much request pending, try again after some time!</h5>
+    }
+    
+</form>

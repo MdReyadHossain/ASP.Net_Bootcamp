@@ -1,17 +1,17 @@
-﻿using System;
+﻿using NGO_ZeroHunger.Auth;
+using NGO_ZeroHunger.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using ZeroHunger.Auth;
-using ZeroHunger.Entity;
 
-namespace ZeroHunger.Controllers
+namespace NGO_ZeroHunger.Controllers
 {
+    [RestaurantAthentication]
     public class RestaurantController : Controller
     {
         // GET: Restaurant
-        [RestaurantAccess]
         public ActionResult Dashboard()
         {
             ViewBag.Message = "Restaurant";
@@ -19,19 +19,31 @@ namespace ZeroHunger.Controllers
             return View();
         }
 
-        [RestaurantAccess]
+        
         [HttpGet]
-        public ActionResult OpenRequest()
+        public ActionResult CreateRequest()
         {
+            string res = (string)Session["restaurantName"];
+
+            NGO_Entities db = new NGO_Entities();
+            var request = (from r in db.Requests
+                           where r.restaurant_name.Equals(res) && r.status.Equals("Pending")
+                           select r).ToList();
+
+            if (request.Count() < 4)
+                ViewBag.stat = true;
+            else
+                ViewBag.stat = false;
+
             return View();
         }
 
         [HttpPost]
-        public ActionResult OpenRequest(Request req)
+        public ActionResult CreateRequest(Request req)
         {
             if (ModelState.IsValid)
             {
-                var db = new DB_Zero_HungerEntities();
+                var db = new NGO_Entities();
                 db.Requests.Add(req);
                 db.SaveChanges();
                 return RedirectToAction("Dashboard", "Restaurant");
@@ -39,8 +51,8 @@ namespace ZeroHunger.Controllers
 
             return View(req);
         }
+
         
-        [RestaurantAccess]
         public ActionResult Logout()
         {
             Session.Clear();
