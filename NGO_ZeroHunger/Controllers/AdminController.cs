@@ -46,7 +46,11 @@ namespace NGO_ZeroHunger.Controllers
             var request = (from r in requestDB.Requests
                            where r.id.Equals(req.id)
                            select r).SingleOrDefault();
-            if (request != null)
+
+            var empAvailable = (from e in requestDB.Requests
+                                where e.employee.Equals(req.employee) && e.status.Equals("Assigned")
+                                select e).ToList();
+            if (request != null && empAvailable.Count() < 5)
             {
                 request.employee = req.employee;
                 request.accept_time = req.accept_time;
@@ -57,8 +61,8 @@ namespace NGO_ZeroHunger.Controllers
                 return RedirectToAction("PendingRequest", "Admin");
             }
 
-            TempData["Msg"] = "Employee ID Invalid";
-            return RedirectToAction("PendingRequest", "Admin");
+            TempData["Msg"] = req.employee + " has been assigned to max limit. Choose other employee ";
+            return RedirectToAction("AssignEmployee", "Admin");
         }
 
 
