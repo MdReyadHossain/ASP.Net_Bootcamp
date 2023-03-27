@@ -26,20 +26,20 @@ namespace DataAccessLayer.Repo
             return db.Employees.Find(id);
         }
 
-        public bool Create(Employee emp)
+        public static bool Create(Employee emp)
         {
             db.Employees.Add(emp);
             return db.SaveChanges() > 0;
         }
 
-        public bool Update(Employee emp)
+        public static bool Update(Employee emp)
         {
             var employeeDB = Get(emp.ID);
             db.Entry(employeeDB).CurrentValues.SetValues(emp);
             return db.SaveChanges() > 0;
         }
         
-        public bool Delete(int id)
+        public static bool Delete(int id)
         {
             var employeeDB = Get(id);
             db.Employees.Remove(employeeDB);
