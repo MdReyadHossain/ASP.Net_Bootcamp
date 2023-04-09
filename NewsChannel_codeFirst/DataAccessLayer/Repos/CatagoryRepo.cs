@@ -26,15 +26,16 @@ namespace DataAccessLayer.Repos
             return news.Catagories.Find(id);
         }
 
-        public static string CreateCatagory(Catagory catagory)
+        public static bool CreateCatagory(Catagory catagory)
         {
-            news.Catagories.Find(catagory.Name);
-            news.Catagories.Add(catagory);
-            if (news.SaveChanges() > 0)
-                return "Catagory has been created!";
+            var db = news.Catagories.Find(catagory.Name);
+            // Console.WriteLine(db);
+            // return null;
 
-            else
-                return "No";
+            news.Catagories.Add(catagory);
+            return news.SaveChanges() > 0;
+            // if (news.SaveChanges() > 0)
+            // return "Catagory has been created!";
         }
     }
 }

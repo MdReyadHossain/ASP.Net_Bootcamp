@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.Model
+namespace BusinessLogicLayer.DTOs
 {
-    public class News
+    public class NewsDTO
     {
-        [Key]
+        [Required]
         public int ID { set; get; }
 
         [Required]
@@ -18,10 +17,9 @@ namespace DataAccessLayer.Model
 
         [Required]
         public string Description { set; get; }
-        
-        [ForeignKey("Catagory")]
+
+        [Required]
         public int Cid { set; get; }
-        public virtual Catagory Catagory { set; get; }
 
         [Required]
         public DateTime Date { set; get; }

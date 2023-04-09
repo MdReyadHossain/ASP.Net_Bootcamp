@@ -1,4 +1,5 @@
-﻿using DataAccessLayer.Models;
+﻿using BusinessLogicLayer.DTOs;
+using DataAccessLayer.Models;
 using DataAccessLayer.Repos;
 using System;
 using System.Collections.Generic;
@@ -10,9 +11,19 @@ namespace BusinessLogicLayer.Service
 {
     public class CatagoryService
     {
-        public static string CreateCatagory(Catagory catagory)
+        public static bool CreateCatagory(CatagoryDTO catagory)
         {
-            return CatagoryRepo.CreateCatagory(catagory);
+            var data = Convert(catagory);
+            return CatagoryRepo.CreateCatagory(data);
+        }
+
+        static Catagory Convert(CatagoryDTO catagory)
+        {
+            return new Catagory()
+            {
+                ID = catagory.ID,
+                Name = catagory.Name
+            };
         }
     }
 }

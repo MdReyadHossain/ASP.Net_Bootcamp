@@ -5,20 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.Model
+namespace BusinessLogicLayer.DTOs
 {
-    public class Catagory
+    public class CatagoryDTO
     {
-        [Key]
+        [Required]
         public int ID { set; get; }
 
         [Required]
         public string Name { set; get; }
-
-        public virtual ICollection<News> Newses { set; get; }
-        public Catagory()
-        {
-            Newses = new List<News>();
-        } 
     }
 }
