@@ -12,3 +12,5 @@ E:\My Files\Reyad\Study\Coding\ASP .NET\NewsChannel_codeFirst\DataAccessLayer\ob
 E:\My Files\Reyad\Study\Coding\ASP .NET\NewsChannel_codeFirst\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
 E:\My Files\Reyad\Study\Coding\ASP .NET\NewsChannel_codeFirst\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.DBinitialized.resources
 E:\My Files\Reyad\Study\Coding\ASP .NET\NewsChannel_codeFirst\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.GenerateResource.cache
+E:\My Files\Reyad\Study\Coding\ASP .NET\NewsChannel_codeFirst\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.catagory_validation_removed.resources
+E:\My Files\Reyad\Study\Coding\ASP .NET\NewsChannel_codeFirst\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.catagory_validation_added.resources

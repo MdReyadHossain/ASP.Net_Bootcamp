@@ -1,0 +1,12 @@
+E:\My Files\Reyad\Study\Coding\ASP .NET\ProjectManagement\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+E:\My Files\Reyad\Study\Coding\ASP .NET\ProjectManagement\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+E:\My Files\Reyad\Study\Coding\ASP .NET\ProjectManagement\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll
+E:\My Files\Reyad\Study\Coding\ASP .NET\ProjectManagement\BusinessLogicLayer\bin\Debug\EntityFramework.dll
+E:\My Files\Reyad\Study\Coding\ASP .NET\ProjectManagement\BusinessLogicLayer\bin\Debug\DataAccessLayer.pdb
+E:\My Files\Reyad\Study\Coding\ASP .NET\ProjectManagement\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll.config
+E:\My Files\Reyad\Study\Coding\ASP .NET\ProjectManagement\BusinessLogicLayer\bin\Debug\EntityFramework.xml
+E:\My Files\Reyad\Study\Coding\ASP .NET\ProjectManagement\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.AssemblyReference.cache
+E:\My Files\Reyad\Study\Coding\ASP .NET\ProjectManagement\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CoreCompileInputs.cache
+E:\My Files\Reyad\Study\Coding\ASP .NET\ProjectManagement\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CopyComplete
+E:\My Files\Reyad\Study\Coding\ASP .NET\ProjectManagement\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+E:\My Files\Reyad\Study\Coding\ASP .NET\ProjectManagement\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb

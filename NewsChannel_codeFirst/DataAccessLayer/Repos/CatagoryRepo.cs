@@ -28,7 +28,7 @@ namespace DataAccessLayer.Repos
 
         public static bool CreateCatagory(Catagory catagory)
         {
-            var db = news.Catagories.Find(catagory.Name);
+            // var db = news.Catagories.Find(catagory.Name);
             // Console.WriteLine(db);
             // return null;
 

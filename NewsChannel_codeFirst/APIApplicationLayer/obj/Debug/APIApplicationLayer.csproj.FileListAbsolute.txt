@@ -72,3 +72,5 @@ E:\My Files\Reyad\Study\Coding\ASP .NET\NewsChannel_codeFirst\APIApplicationLaye
 E:\My Files\Reyad\Study\Coding\ASP .NET\NewsChannel_codeFirst\APIApplicationLayer\obj\Debug\APIApplicationLayer.csproj.CopyComplete
 E:\My Files\Reyad\Study\Coding\ASP .NET\NewsChannel_codeFirst\APIApplicationLayer\obj\Debug\APIApplicationLayer.dll
 E:\My Files\Reyad\Study\Coding\ASP .NET\NewsChannel_codeFirst\APIApplicationLayer\obj\Debug\APIApplicationLayer.pdb
+E:\My Files\Reyad\Study\Coding\ASP .NET\NewsChannel_codeFirst\APIApplicationLayer\bin\EntityFramework.SqlServer.dll
+E:\My Files\Reyad\Study\Coding\ASP .NET\NewsChannel_codeFirst\APIApplicationLayer\bin\EntityFramework.SqlServer.xml

@@ -55,6 +55,14 @@
     <Compile Include="Migrations\202304021209268_DBinitialized.designer.cs">
       <DependentUpon>202304021209268_DBinitialized.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202304091800102_catagory_validation_removed.cs" />
+    <Compile Include="Migrations\202304091800102_catagory_validation_removed.designer.cs">
+      <DependentUpon>202304091800102_catagory_validation_removed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202304091801571_catagory_validation_added.cs" />
+    <Compile Include="Migrations\202304091801571_catagory_validation_added.designer.cs">
+      <DependentUpon>202304091801571_catagory_validation_added.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Catagory.cs" />
     <Compile Include="Models\News.cs" />
@@ -71,6 +79,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202304021209268_DBinitialized.resx">
       <DependentUpon>202304021209268_DBinitialized.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304091800102_catagory_validation_removed.resx">
+      <DependentUpon>202304091800102_catagory_validation_removed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202304091801571_catagory_validation_added.resx">
+      <DependentUpon>202304091801571_catagory_validation_added.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
